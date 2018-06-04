@@ -1,0 +1,58 @@
+参与开源项目具体步骤
+
+以GitHub.com网站SourceTree项目为例，它的项目主页为 https://github.com/Shannoon/SourceTree
+
+0、在github.com网站注册个人账号并登录
+
+1、配置个人相关信息
+
+(1) 配置个人用户名和邮箱信息。
+
+Git命令：
+git config --global user.name "yourName"
+git config --global user.email "yourEmail"
+
+(2) 配置个人SSH密钥
+
+方法一：重新生成一对密钥，上传公钥。可以使用Git命令或Git GUI、PuTTYgen工具。
+Git命令：ssh-keygen -t rsa -C "yourEmail"
+
+方法二：把以前保存的密钥，下载然后重新解压到机器的用户目录下
+C:\Users\Administrator\.ssh
+
+2、浏览器中访问项目主页，点“Fork”，就在自己的账号下克隆了一个项目库
+浏览器地址栏输入项目主页：https://github.com/Shannoon/SourceTree
+
+3、将自己的账号下的对应项目库克隆到本地
+Git命令：git clone <URL>
+
+4、在本地库修改提交代码
+
+(1) 默认只克隆master分支，切换到版本库目录，
+然后抓取对应班级分支（比如：dev-15se1)（创建该远程分支的本地分支）
+Git命令：git checkout -b dev-15se1 origin/dev-15se1
+
+(2)在对应班级分支下（比如：dev-15se1)分别添加和修改一个文件。
+a、添加一个身份信息文件（用Notepad++软件，编码选择以UTF-8无BOM格式编码，以解决中文显示乱码问题）
+
+文件示例：
+文件名：20150305100_张小三_热爱生命.txt
+文件内容为：20150305100,张小三：汪国真《热爱生命》
+
+b、修改班级成员列表StudentsList.txt文件，在文件对应序号之后填写个人学号、姓名信息，学号姓名之间用逗号分隔，不要换行。
+例如：
+......
+[00]20150305100，张小三
+......
+
+(3) 添加提交到本地库
+
+5、将修改后的本地库push推送到自己帐号下的远程库
+Git命令：git push origin develop
+
+6、在网站个人账号下发起Pull Request拉请求。如果希望项目官方能接受你的修改，你可以发起一个 Pull Request，然后等待对方审核批准。特别注意：源分支与目标分支的对应关系，都是班级对应分支。
+
+(1) 创建Pull Request拉请求。标题填写自己的学号、姓名信息，内容填写描述信息。
+
+(2) 查看开源项目主页的Pull Requests列表，确认自己的Pull Request拉请求。
+
