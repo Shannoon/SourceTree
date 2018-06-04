@@ -1,7 +1,7 @@
 如何参与一个开源项目？
 
 
-比如人气极高的 bootstrap 项目，这是一个非常强大的 CSS 框架，你可以访问它的项目主页 https://github.com/twbs/bootstrap。
+比如人气极高的 Bootstrap 项目，这是一个非常强大的 CSS 框架，你可以访问它的项目主页 https://github.com/twbs/bootstrap。
 
 
 
