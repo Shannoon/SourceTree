@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间-->
+<mapper namespace="net.wanho.mapper.StudentMapper">
+    <insert id="addStu">
+         INSERT INTO student VALUES (NULL,#{name},#{age},#{sex},#{password});
+    </insert>
+    <update id="update">
+        UPDATE student
+        <set>
+            <if test="name!=null and !''.equals(name)">
+                name=#{name},
+            </if>
+            <if test="age!=null and !''.equals(age)">
+                age=#{age},
+            </if>
+            <if test="sex!=null and !''.equals(sex)">
+                sex=#{sex},
+            </if>
+            <if test="password!=null and !''.equals(password)">
+                password=#{password},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="delete">
+        DELETE FROM student WHERE id=#{id}
+    </delete>
+
+
+    <select id="getAllStus" resultType="net.wanho.pojo.Student">
+        SELECT * FROM student
+    </select>
+    <select id="queryById" resultType="net.wanho.pojo.Student">
+        SELECT * FROM student WHERE id=#{id}
+    </select>
+</mapper>
